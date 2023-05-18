@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
+    const {googleSignIn} = useContext(AuthContext)
+
+
+    const handleGoogleLogin = () =>{
+        googleSignIn()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        } )
+        .catch(error => {
+            console.log(error);
+        })
+    }
     return (
         <div className="hero min-h-screen ">
 
@@ -38,10 +52,8 @@ const Login = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <label className="label">
-                            <span className="label-text">Sign in with</span>
-                        </label>
-                        <button className="btn btn-outline btn-accent">Google</button>
+                        
+                        <button onClick={handleGoogleLogin} className="btn btn-outline btn-accent">Sign In With Google</button>
                     </div>
                 </div>
             </div>
