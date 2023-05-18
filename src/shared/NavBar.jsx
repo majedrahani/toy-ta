@@ -38,9 +38,9 @@ const NavBar = () => {
             </div>
             <div className="navbar-end flex gap-4">
                 {
-                    user &&
-                    <div className="tooltip tooltip-open tooltip-left" data-tip={user && user.displayName}>
-                        {user && <img src={user.photoURL} alt="" className='w-[40px] my-5 h-[40px] rounded-full' />} </div>
+                    user?.photoURL &&
+                    <div className="tooltip tooltip-open tooltip-left" data-tip={user && user?.displayName}>
+                        {user && <img src={user?.photoURL} alt="" className='w-[40px] my-5 h-[40px] rounded-full' />} </div>
                 }
                 {
                     user ?
