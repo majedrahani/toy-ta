@@ -36,7 +36,12 @@ const NavBar = () => {
                     <li className='font-bold'><Link>Blogs</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end flex gap-4">
+                {
+                    user &&
+                    <div className="tooltip tooltip-open tooltip-left" data-tip={user && user.displayName}>
+                        {user && <img src={user.photoURL} alt="" className='w-[40px] my-5 h-[40px] rounded-full' />} </div>
+                }
                 {
                     user ?
                         <Link onClick={handleLogOut} className='btn btn-warning'>Logout</Link>
