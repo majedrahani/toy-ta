@@ -4,13 +4,13 @@
         "name": "Truck Toys",
         "toys": [
           {
-            "picture": "https://i.ibb.co/PxnBf10/truck-1.png",
+            "picture": "https://i.ibb.co/3B0MTXR/truck-2.png",
             "name": "Turbo Tread Monster Truck",
             "price": "$19.99",
             "rating": 4.5
           },
           {
-            "picture": "https://i.ibb.co/3B0MTXR/truck-2.png",
+            "picture": "https://i.ibb.co/PxnBf10/truck-1.png",
             "name": "Mighty Hauler Transport Truck",
             "price": "$14.99",
             "rating": 4.0
@@ -53,4 +53,3 @@
       }
     ]
   }
-  

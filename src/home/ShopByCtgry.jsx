@@ -9,12 +9,14 @@ const ShopByCtgry = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        fetch('data.json')
+        fetch(`http://localhost:5000/categoryToys`)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => {
+                const result = data.map( d => setData(d))
+            })
     }, [])
 
-    // console.log(data.carToys[1].name);
+    console.log(data);
     return (
         <div className='px-60'>
             <Tabs>
@@ -25,30 +27,30 @@ const ShopByCtgry = () => {
                 </TabList>
 
                 <TabPanel>
-                    <h2>{data?.carToys[0].name}</h2>
+                    <h2>{data?.carToys?.[0]?.name}</h2>
                     <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                         {
-                            data?.carToys[0].toys.map(categoryData_1 => <Category_1
+                            data?.carToys?.[0]?.toys.map(categoryData_1 => <Category_1
                                 categoryData_1={categoryData_1}
                             ></Category_1>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>{data?.carToys[1].name}</h2>
+                    <h2>{data?.carToys?.[1]?.name}</h2>
                     <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                         {
-                            data?.carToys[1].toys.map(categoryData_2 => <Category_2
+                            data?.carToys?.[1]?.toys.map(categoryData_2 => <Category_2
                                 categoryData_2={categoryData_2}
                             ></Category_2>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>{data?.carToys[2].name}</h2>
+                    <h2>{data?.carToys?.[2]?.name}</h2>
                     <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                         {
-                            data?.carToys[2].toys.map(categoryData_3 => <Category_3
+                            data?.carToys?.[2]?.toys.map(categoryData_3 => <Category_3
                                 categoryData_3={categoryData_3}
                             ></Category_3>)
                         }
