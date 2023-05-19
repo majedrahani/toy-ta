@@ -1,0 +1,56 @@
+{
+    "tabs": [
+      {
+        "name": "Truck Toys",
+        "toys": [
+          {
+            "picture": "math_toy1.jpg",
+            "name": "Turbo Tread Monster Truck",
+            "price": "$19.99",
+            "rating": 4.5
+          },
+          {
+            "picture": "math_toy2.jpg",
+            "name": "Mighty Hauler Transport Truck",
+            "price": "$14.99",
+            "rating": 4.0
+          }
+        ]
+      },
+      {
+        "name": "Private Car Toys",
+        "toys": [
+          {
+            "picture": "language_toy1.jpg",
+            "name": "Speedy Racer Sports Car",
+            "price": "$12.99",
+            "rating": 4.2
+          },
+          {
+            "picture": "language_toy2.jpg",
+            "name": "Mini Cruiser Convertible Car",
+            "price": "$17.99",
+            "rating": 4.7
+          }
+        ]
+      },
+      {
+        "name": "Bike Toys",
+        "toys": [
+          {
+            "picture": "science_toy1.jpg",
+            "name": "Turbo Rider BMX Bike",
+            "price": "$29.99",
+            "rating": 4.8
+          },
+          {
+            "picture": "science_toy2.jpg",
+            "name": "Adventure Trail Mountain Bike",
+            "price": "$24.99",
+            "rating": 4.6
+          }
+        ]
+      }
+    ]
+  }
+  
