@@ -5,6 +5,7 @@ import Login from "../registretion/Login";
 import Register from "../registretion/Register";
 import AddToy from "../AddToy/AddToy";
 import MyToys from "../myToy/MyToys";
+import AllToys from "../AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
           path: 'myToys',
           element: <MyToys></MyToys>
+        },
+        {
+          path: 'allToys',
+          element: <AllToys></AllToys>
         }
       ]
     },
