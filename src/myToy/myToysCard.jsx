@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyToysCard = ({ myToy, handleDelete }) => {
     console.log(myToy);
@@ -47,6 +48,9 @@ const MyToysCard = ({ myToy, handleDelete }) => {
                                 <button onClick={()=> handleDelete (_id)} className='btn btn-outline btn-error'>
                                     Delete
                                 </button>
+                                <Link to={`/updateToy/${_id}`}>
+                                <button className='btn btn-error'>Update</button>
+                                </Link>
                             </th>
                         </tr>
                        
