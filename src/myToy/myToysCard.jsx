@@ -1,8 +1,13 @@
 import React from 'react';
 
-const MyToysCard = ({ myToy }) => {
+const MyToysCard = ({ myToy, handleDelete }) => {
     console.log(myToy);
-    const { email, seller_name, ratting, quantity, price, img, description, category, Toy_name } = myToy;
+    const { _id, email, seller_name, ratting, quantity, price, img, description, category, Toy_name } = myToy;
+
+  
+
+
+
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -39,7 +44,9 @@ const MyToysCard = ({ myToy }) => {
                             </td>
                             <td>{category}</td>
                             <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
+                                <button onClick={()=> handleDelete (_id)} className='btn btn-outline btn-error'>
+                                    Delete
+                                </button>
                             </th>
                         </tr>
                        

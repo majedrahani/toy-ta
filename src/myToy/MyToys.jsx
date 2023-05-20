@@ -17,6 +17,24 @@ const MyToys = () => {
     },[])
 
     console.log(data);
+
+    const handleDelete = (id) =>{
+        const proceed = confirm('are you sure you want to delete?')
+        if (proceed) {
+            fetch(`http://localhost:5000/uploads/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.deletedCount > 0){
+                    alert('Deleted successfully')
+                    const remaining = data.filter(d => d._id !== id)
+                    setData(remaining)
+                }
+            })
+        }
+    }
     
     
     
@@ -27,6 +45,7 @@ const MyToys = () => {
             {
                 data.map(myToy => <MyToysCard
                 myToy={myToy}
+                handleDelete={handleDelete}
                 ></MyToysCard>)
             }
         </div>
