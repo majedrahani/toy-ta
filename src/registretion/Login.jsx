@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
     const {googleSignIn , signIn} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page', location);
+    const from = location.state?.from?.pathname || "/" ;
+ 
 
 
     const handleGoogleLogin = () =>{
@@ -11,6 +16,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            navigate(from, {replace: true})
         } )
         .catch(error => {
             console.log(error);
@@ -30,6 +36,7 @@ const Login = () => {
         .then(result => {
             const loggedInUser = result.user;
             console.log(loggedInUser);
+            navigate(from, {replace: true})
         })
         .catch(error => {
             console.log(error.message);

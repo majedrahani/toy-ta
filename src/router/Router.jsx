@@ -9,6 +9,7 @@ import AllToys from "../AllToys/AllToys";
 import UpdateToy from "../myToy/UpdateToy";
 import Blog from "../blog/Blog";
 import UploadDetails from "../AllToys/UploadDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'uploadDetails/:id',
-          element: <UploadDetails></UploadDetails>,
+          element: <PrivateRoute><UploadDetails></UploadDetails></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/uploads/${params.id}`)
         }
       ]
