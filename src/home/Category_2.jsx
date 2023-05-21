@@ -6,7 +6,7 @@ const Category_2 = ({ categoryData_2 }) => {
     const { picture, name, price, rating, _id } = categoryData_2;
     return (
         <div className=' '>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card lg:w-96 bg-base-100 shadow-xl">
                 <figure><img src={picture} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
