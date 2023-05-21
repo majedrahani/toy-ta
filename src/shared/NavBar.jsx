@@ -33,7 +33,7 @@ const NavBar = () => {
                     <li className='font-bold'><Link to="/allToys">All Toys</Link></li>
                     <li className='font-bold'><Link to="/myToys">My Toys</Link></li>
                     <li className='font-bold'><Link to="/addToy">Add a Toys</Link></li>
-                    <li className='font-bold'><Link>Blogs</Link></li>
+                    <li className='font-bold'><Link to="/blog">Blogs</Link></li>
                 </ul>
             </div>
             <div className="navbar-end flex gap-4">
