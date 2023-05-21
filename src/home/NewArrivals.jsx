@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import ArrivalsCard from './ArrivalsCard';
 
-const NewArrivals = ({ dt }) => {
+const NewArrivals = ({ toys }) => {
     // const [toy, setToy] = useState([])
- console.log(dt);
+    // const {picture, name, price} = toys
+ console.log(toys?.name);
     return (
-        <div className='mx-auto grid grid-cols-2 gap-4'>
-            {
-                dt?.toys.map(d => <ArrivalsCard
-                data={d}
-                ></ArrivalsCard>)
-            }
-        </div>
+        
+            
+            <div className="card  bg-base-100 shadow-xl">
+                <figure><img src={toys?.picture} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{toys?.name}</h2>
+                    <p>{toys?.price}</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        
     );
 };
 

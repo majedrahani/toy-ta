@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Category_1 = ({ categoryData_1 }) => {
     // console.log(categoryData_1);
-    const { picture, name, price, rating } = categoryData_1;
+    const { picture, name, price, rating , _id} = categoryData_1;
     return (
         <div className=' '>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -11,7 +12,9 @@ const Category_1 = ({ categoryData_1 }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <Link to={`/categoryDetails/${_id}`}>
+                            <button className="btn btn-warning">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import NewArrivals from './NewArrivals';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import Category_1 from './Category_1';
 import Category_2 from './Category_2';
 import Category_3 from './Category_3';
-import NewArrivals from './NewArrivals';
+import 'react-tabs/style/react-tabs.css';
 
-const ShopByCtgry = () => {
-    const [toy, setToy] = useState([]);
+const ToyCategory = () => {
+    const [toy, setToy] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:5000/categoryToys')
@@ -18,8 +18,9 @@ const ShopByCtgry = () => {
     console.log(toy);
     return (
         <div>
+            <h3 className=' text-[30px] font-bold text-center mb-3'>Shop by Category</h3>
             <div className='px-60'>
-                {/* <Tabs>
+                 <Tabs>
                     <TabList>
                         <Tab>Truck</Tab>
                         <Tab>Car</Tab>
@@ -27,51 +28,48 @@ const ShopByCtgry = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>{data?.carToys?.[0]?.name}</h2>
+                        
                         <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                             {
-                                data?.carToys?.[0]?.toys.map(categoryData_1 => <Category_1
+                                toy.slice(0,2).map(categoryData_1 => <Category_1
                                     categoryData_1={categoryData_1}
                                 ></Category_1>)
                             }
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>{data?.carToys?.[1]?.name}</h2>
+                        
                         <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                             {
-                                data?.carToys?.[1]?.toys.map(categoryData_2 => <Category_2
+                                toy.slice(2,4).map(categoryData_2 => <Category_2
                                     categoryData_2={categoryData_2}
                                 ></Category_2>)
                             }
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <h2>{data?.carToys?.[2]?.name}</h2>
+                        
                         <div className='grid grid-cols-2 gap-6 my-12 mx-auto '>
                             {
-                                data?.carToys?.[2]?.toys.map(categoryData_3 => <Category_3
+                                toy.slice(4,6).map(categoryData_3 => <Category_3
                                     categoryData_3={categoryData_3}
                                 ></Category_3>)
                             }
                         </div>
                     </TabPanel>
-                </Tabs> */}
+                </Tabs>
             </div>
-            {/* new arrivals */}
-            <div className=''>
-                <h2 className=' text-center text-[40px] font-bold mb-4'>New Arrivals</h2>
-                <div className=' px-16 grid grid-cols-6 gap-4 my-10 mx-auto w-[100%]'>
+            <h2 className=' text-center text-[40px] font-bold mb-4'>New Arrivals</h2>
+            <div className=' px-16 grid grid-cols-6 gap-4 my-10 mx-auto w-[100%]'>
 
-                    {
-                        data.map(dt => <NewArrivals
-                            dt={dt}
-                        ></NewArrivals>)
-                    }
-                </div>
+                {
+                    toy.map(toys => <NewArrivals
+                        toys={toys}
+                    ></NewArrivals>)
+                }
             </div>
         </div>
     );
 };
 
-export default ShopByCtgry;
+export default ToyCategory;

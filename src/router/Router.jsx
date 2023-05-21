@@ -11,6 +11,7 @@ import Blog from "../blog/Blog";
 import UploadDetails from "../AllToys/UploadDetails";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../error/error";
+import CategoryDetails from "../home/CategoryDetails";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
           path: 'uploadDetails/:id',
           element: <PrivateRoute><UploadDetails></UploadDetails></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/uploads/${params.id}`)
+        },
+        {
+          path: 'categoryDetails/:id',
+          element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/categoryToys/${params.id}`)
         }
       ]
     },
