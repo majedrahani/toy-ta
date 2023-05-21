@@ -14,7 +14,7 @@ const MyToys = () => {
         .then(data => {
             setData(data)
         })
-    },[])
+    },[url])
 
     console.log(data);
 
@@ -25,11 +25,12 @@ const MyToys = () => {
                 method: 'DELETE'
             })
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if(data.deletedCount > 0){
+            .then(data2 => {
+                console.log(data2)
+                if(data2.deletedCount > 0){
                     alert('Deleted successfully')
                     const remaining = data.filter(d => d._id !== id)
+                    console.log(remaining);
                     setData(remaining)
                 }
             })
