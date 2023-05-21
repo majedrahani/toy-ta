@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import Gallery from './Gallery';
-import ShopByCtgry from './ShopByCtgry';
+
 import Follow from './Follow';
 import NewArrivals from './NewArrivals';
 import ToyCategory from './ToyCategory';
