@@ -21,7 +21,7 @@ const AllToysCard = ({allToy}) => {
                         <td>
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
-                                    <div className="mask mask-squircle w-24 h-24">
+                                    <div className="mask rounded w-24 h-24">
                                         <img src={img} alt="Avatar Tailwind CSS Component" />
                                     </div>
                                 </div>
