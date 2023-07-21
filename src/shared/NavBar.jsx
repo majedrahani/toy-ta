@@ -54,13 +54,13 @@ const NavBar = () => {
             <div className="navbar-end flex gap-4">
                 {
                     user?.photoURL &&
-                    <div className="tooltip tooltip-open tooltip-left" data-tip={user && user?.displayName}>
+                    <div className="tooltip hover:tooltip-open tooltip-left" data-tip={user && user?.displayName}>
                         {user && <img src={user?.photoURL} alt="" className='w-[40px] my-5 h-[40px] rounded-full' />} </div>
                 }
                 {
                     user ?
-                        <Link onClick={handleLogOut} className='btn btn-error'>Logout</Link>
-                        : <Link to="/login" className='btn btn-warning'>Login</Link>
+                        <Link onClick={handleLogOut} className='btn btn-accent text-white '>Logout</Link>
+                        : <Link to="/login" className='btn btn-accent'>Login</Link>
                 }
 
             </div>

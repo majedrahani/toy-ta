@@ -14,7 +14,7 @@ const NewArrivals = ({ toys }) => {
                     <h2 className="card-title">{toys?.name}</h2>
                     <p>{toys?.price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn btn-warning">Buy Now</button>
                     </div>
                 </div>
             </div>
